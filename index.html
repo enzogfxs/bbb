@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Votação BBB 25</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff33f;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 20px;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #222;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .vote-card {
+      display: flex;
+      align-items: center;
+      background: #f1f1f1;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .vote-card input {
+      margin-right: 10px;
+    }
+
+    .vote-card .card-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .vote-card img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .vote-card span {
+      font-size: 16px;
+    }
+
+    button {
+      background: #9933ff;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .vote-result {
+      margin-top: 20px;
+      background: #a2f4d3;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Voto da torcida:<br>quem você quer eliminar no BBB 25?</h1>
+    <form id="voteForm">
+      <label class="vote-card">
+        <input type="radio" name="vote" value="Amarela" required>
+        <div class="card-content">
+          <img src="https://via.placeholder.com/40" alt="Robbb Amarela">
+          <span>Robbb Amarela</span>
+        </div>
+      </label>
+
+      <label class="vote-card">
+        <input type="radio" name="vote" value="Rosa">
+        <div class="card-content">
+          <img src="https://via.placeholder.com/40" alt="Robbb Rosa">
+          <span>Robbb Rosa</span>
+        </div>
+      </label>
+
+      <label class="vote-card">
+        <input type="radio" name="vote" value="Verde">
+        <div class="card-content">
+          <img src="https://via.placeholder.com/40" alt="Robbb Verde">
+          <span>Robbb Verde</span>
+        </div>
+      </label>
+
+      <button type="submit">Votar</button>
+    </form>
+    <div id="result" class="vote-result">Voto único. Ainda não votou? Vote agora!</div>
+  </div>
+
+  <script>
+    document.getElementById('voteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const selected = document.querySelector('input[name="vote"]:checked').value;
+      alert("Você votou para eliminar: Robbb " + selected + "!");
+    });
+  </script>
+</body>
+</html>
